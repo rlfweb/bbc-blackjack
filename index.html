@@ -3,11 +3,48 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <title>Variables!</title>
+    <title>BBC BlackJack</title>
+    <link rel="stylesheet" href="./base.css" />
     <link rel="stylesheet" href="./custom.css" />
   </head>
 
   <body>
+    <header>
+      <h1>BBC BlackJack</h1>
+      <h3>a game for two players</h3>
+    </header>
+
+    <div class="container">
+      <div class="button-row">
+        <button>Shuffle</button>
+        <button>Deal</button>
+      </div>
+
+      <div class="game-block">
+        <div class="player-block">
+          <h2>Player 1</h2>
+          <div class="card-box">cards dealt here</div>
+          <div class="button-row">
+            <button>Twist</button>
+            <button>Stick</button>
+          </div>
+          <div class="total">Player 1 score displays here</div>
+        </div>
+
+        <div class="player-block">
+          <h2>Player 2 / Dealer?</h2>
+          <div class="card-box">Cards dealt here</div>
+          <div class="button-row">
+            <button>Twist</button>
+            <button>Stick</button>
+          </div>
+          <div class="total">Player 2 score displays here</div>
+        </div>
+      </div>
+
+      <div class="result">Result displays here - Bust / Win / Lose / Draw</div>
+    </div>
+
     <script src="./custom.js"></script>
   </body>
 </html>

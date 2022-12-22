@@ -1,0 +1,87 @@
+body {
+  font-family: sans-serif;
+  background-color: lightgray;
+  color: #030e12;
+}
+
+p {
+  font-size: 1.75rem;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+header {
+  background-color: #ffe581;
+  padding: 1rem;
+  text-align: center;
+}
+
+.container {
+  padding: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #5bccf6;
+}
+
+.button-row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+button {
+  border-radius: 0;
+  background-color: #fcde67;
+  margin: 1rem;
+  font-size: 2rem;
+  border-style: none;
+}
+
+button:hover {
+  background-color: #030e12;
+  color: #ffe581;
+}
+
+.game-block {
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+}
+
+.player-block {
+  width: 40vw;
+}
+
+.card-box {
+  background-color: #fff;
+  margin: 2rem;
+  padding: 2rem;
+}
+
+.total {
+  background-color: chartreuse;
+  width: 120px;
+  height: 60px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 8px;
+  margin-bottom: 2rem;
+}
+
+.result {
+  background-color: orange;
+  width: 240px;
+  margin: 2rem auto 2rem auto;
+  padding: 8px;
+  text-align: center;
+}

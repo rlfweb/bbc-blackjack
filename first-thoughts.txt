@@ -1,0 +1,44 @@
+First thoughts
+
+data array for the deck - 52 cards i.e. suit: spades, number: Q, value: 10
+Might also want to name each card i.e. card01 and also have some way to register whether card is still in the deck or not i.e. inDeck = true
+
+(instead of shuffle and deal buttons, could just have one button that does all of this - New Game). But I quite like the manual feel of shuffle/deal.
+
+Shuffle button - isn't a shuffle, just a reset to return all cards to deck
+(both player's twist/stick buttons greyed out?)
+
+Deal button - deals 4 cards - using Math.random? - card 1 to player 1, card 2 to player 2, card 3 to player 1, card 4 to player 2
+Cards display as Suit + Number i.e. Spades Q
+
+Player 1 cards face up / Player 2 cards face down?
+(each card can only be taken from the deck once so dealing cards removes those cards from deck, which contains only 48 cards now), perhaps filter method or changing inDeck to false?
+Don't want to change the original array with splice as will need full deck for each new game. 
+
+Update player 1's total from the deal
+
+Player 1's Twist/Stick buttons become active
+
+Player 1 goes first:
+Twist - new random card - new total
+Player 1 can keep clicking twist until their total is 21 or over.
+If over and they have an Ace, that card's value automatically changes from 11 to 1 and score re-evaluates to be not bust anymore? They can have up to 4 aces and only one will be worth 11, rest will be 1 each.
+[try it like this first, they may need to have more direct control of the Ace i.e. a toggle for 11 or 1]
+They can then twist again until
+a) they get 21 - then it automatically sticks?
+a) they get 22 or over - their total displays with BUST after it and Player 2's score displays as WINNER (as they would win with any score so no point playing)
+OR
+b) they choose to stick on a score of 21 or under
+
+Player 2's cards are revealed and their Twise/Stick buttons become active
+
+Same process as above for Player 1's turn.
+
+Finally, result displays and stays there until players click shuffle/deal (or new game?)
+
+Notes:
+Don't want dealing / evaluation to be too quick - maybe on setTimeout so there is a sense of a game being played ... ?
+4 images for the Suits?
+Maybe some kind of highlighting of player-block that shows whose turn it is?
+Sounds?
+Conditional CSS displays Red when they are bust and Green when their hand is valid?

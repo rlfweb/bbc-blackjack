@@ -50,6 +50,7 @@ button {
 button:hover {
   background-color: #030e12;
   color: #ffe581;
+  cursor: pointer;
 }
 
 .game-block {

@@ -20,13 +20,22 @@ const deck = [
 // onclick DEAL
 
 // use Math.random to choose a card and render that card in the DOM within player 1's hand
-const dealCard = deck[Math.floor(Math.random()*deck.length)];
+// const dealCard = deck[Math.floor(Math.random()*deck.length)];
 
-const cardOneDeal = document.querySelector('.card-box');
-cardOneDeal.textContent = dealCard.cardNumber + ' ' + dealCard.cardSuit;
+// const cardOneDeal = document.querySelector('.card-box');
+// cardOneDeal.textContent = dealCard.cardNumber + ' ' + dealCard.cardSuit;
 
-// const dealCard1 = dealCard deck.cardSuit;
 
+const twist = document.querySelector('.twist-player-1');
+
+twist.addEventListener('click', function() {
+
+    const dealCard = deck[Math.floor(Math.random()*deck.length)];
+
+    const cardOneDeal = document.querySelector('.card-box');
+    cardOneDeal.textContent = dealCard.cardNumber + ' ' + dealCard.cardSuit;
+
+});
 
 // for that card change inDeck to false
 

@@ -26,6 +26,20 @@ shuffle.classList.add("grey");
 console.log(deck);
 
 
+function dealOneCard() {
+    deck.splice(0, 1);
+    }
+
+    dealOneCard();
+    console.log(deck);
+    dealOneCard();
+    console.log(deck);
+    dealOneCard();
+    console.log(deck);
+    dealOneCard();
+    console.log(deck);
+
+
 
 // A function that will: 
 // splice off first item in array
@@ -33,7 +47,7 @@ console.log(deck);
 // update (add to) the score 
 
 // function called four times when deal button is clicked (2 cards to each player's card-box)
-// function called once each time the Twist button is clicked
+// function called once each time the Twist button is clicked and render in correct player's card-box
 
 
 

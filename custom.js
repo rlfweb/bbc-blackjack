@@ -26,27 +26,58 @@ shuffle.classList.add("grey");
 console.log(deck);
 
 
-// onclick DEAL
 
-// use Math.random to choose a card and render that card in the DOM within player 1's hand
-// const dealCard = deck[Math.floor(Math.random()*deck.length)];
+// A function that will: 
+// splice off first item in array
+// render in card-box
+// update (add to) the score 
 
-// const cardOneDeal = document.querySelector('.card-box');
-// cardOneDeal.textContent = dealCard.cardNumber + ' ' + dealCard.cardSuit;
+// function called four times when deal button is clicked (2 cards to each player's card-box)
+// function called once each time the Twist button is clicked
 
 
-const twist = document.querySelector('.twist-player-1');
 
-twist.addEventListener('click', function() {
 
-    const dealCard = deck[Math.floor(Math.random()*deck.length)];
-
-    const cardOneDeal = document.querySelector('.card-box');
-    cardOneDeal.textContent = dealCard.cardNumber + ' ' + dealCard.cardSuit;
-
-    const score = document.querySelector('.player-one-score');
-    score.textContent = dealCard.cardValue;
+// onclick STICK - player 1 
+const stick1 = document.querySelector('.stick-player-1');
+const stick2 = document.querySelector('.twist-player-1');
+stick1.addEventListener('click', function() {
+stick1.classList.add("grey");
+stick2.classList.add("grey");
 });
+
+
+// onclick STICK - player 2 
+const stick3 = document.querySelector('.stick-player-2');
+const stick4 = document.querySelector('.twist-player-2');
+stick3.addEventListener('click', function() {
+stick3.classList.add("grey");
+stick4.classList.add("grey");
+});
+
+
+
+
+
+
+// CODE from when deck was unshuffled and dealing was random
+
+// const twist = document.querySelector('.twist-player-1');
+
+// twist.addEventListener('click', function() {
+
+//     const dealCard = deck[Math.floor(Math.random()*deck.length)];
+
+//     const cardOneDeal = document.querySelector('.card-box');
+//     cardOneDeal.textContent = dealCard.cardNumber + ' ' + dealCard.cardSuit;
+
+//     const score = document.querySelector('.player-one-score');
+//     score.textContent = dealCard.cardValue;
+// });
+
+
+
+
 
 
 // for that card change inDeck to false
@@ -60,6 +91,10 @@ twist.addEventListener('click', function() {
 // total each player's hand 
 
 // game is ready to play
+
+
+
+
 
 
 

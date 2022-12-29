@@ -35,6 +35,9 @@ twist.addEventListener('click', function() {
     const cardOneDeal = document.querySelector('.card-box');
     cardOneDeal.textContent = dealCard.cardNumber + ' ' + dealCard.cardSuit;
 
+    const score = document.querySelector('.player-one-score');
+    score.textContent = dealCard.cardValue;
+
 });
 
 // for that card change inDeck to false
@@ -49,3 +52,8 @@ twist.addEventListener('click', function() {
 
 // game is ready to play
 
+
+
+// Need a function dealOneCard that will deal one card and update the score
+// Then call that function four times when dealing
+// And call that function once each time Twist is clicked 

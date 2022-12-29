@@ -1,5 +1,3 @@
-// onclick SHUFFLE 
-
 // have an array with 52 cards 
 const deck = [
     { cardName: 1, cardSuit: "spades", cardNumber: '2', cardValue: 2, inDeck: true },
@@ -16,6 +14,17 @@ const deck = [
     { cardName: 12, cardSuit: "clubs", cardNumber: 'K', cardValue: 10, inDeck: true },
     { cardName: 13, cardSuit: "spades", cardNumber: 'A', cardValue: 11, inDeck: true }
 ]
+
+// onclick SHUFFLE 
+const shuffle = document.querySelector('.shuffle');
+shuffle.addEventListener('click', function() {
+deck.sort(function() { return 0.5 - Math.random() });
+shuffle.textContent = 'Shuffled';
+shuffle.classList.add("grey");
+});
+
+console.log(deck);
+
 
 // onclick DEAL
 
@@ -37,8 +46,8 @@ twist.addEventListener('click', function() {
 
     const score = document.querySelector('.player-one-score');
     score.textContent = dealCard.cardValue;
-
 });
+
 
 // for that card change inDeck to false
 
@@ -54,6 +63,6 @@ twist.addEventListener('click', function() {
 
 
 
-// Need a function dealOneCard that will deal one card and update the score
+// A function that will deal one card and update the score
 // Then call that function four times when dealing
 // And call that function once each time Twist is clicked 

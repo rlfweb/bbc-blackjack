@@ -16,14 +16,14 @@
 
     <div class="container">
       <div class="button-row">
-        <button>Shuffle</button>
-        <button>Deal</button>
+        <button class="shuffle">Shuffle</button>
+        <button class="deal">Deal</button>
       </div>
 
       <div class="game-block">
         <div class="player-block">
           <h2>Player 1</h2>
-          <div class="card-box">Cards dealt here</div>
+          <div class="card-box"></div>
           <div class="button-row">
             <button class="twist-player-1">Twist</button>
             <button>Stick</button>
@@ -36,7 +36,7 @@
 
         <div class="player-block">
           <h2>Player 2 / Dealer?</h2>
-          <div class="card-box">Cards dealt here</div>
+          <div class="card-box"></div>
           <div class="button-row">
             <button>Twist</button>
             <button>Stick</button>
@@ -46,6 +46,11 @@
       </div>
 
       <div class="result">Result displays here - Bust / Win / Lose / Draw</div>
+      <input
+        type="button"
+        value="New Game"
+        onClick="window.location.reload(true)"
+      />
     </div>
 
     <script src="./custom.js"></script>

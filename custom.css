@@ -39,7 +39,8 @@ header {
   margin-bottom: 2rem;
 }
 
-button {
+button,
+input {
   border-radius: 0;
   background-color: #fcde67;
   margin: 1rem;
@@ -47,10 +48,26 @@ button {
   border-style: none;
 }
 
-button:hover {
+button:hover,
+input:hover {
   background-color: #030e12;
   color: #ffe581;
   cursor: pointer;
+}
+
+input {
+  display: block;
+  width: 240px;
+  margin: 2rem auto 2rem auto;
+  padding: 8px;
+  text-align: center;
+}
+
+.grey,
+.grey:hover {
+  background-color: lightgrey;
+  color: darkgray;
+  cursor: auto;
 }
 
 .game-block {

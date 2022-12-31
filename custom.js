@@ -53,6 +53,7 @@ function dealPlayerTwoCard() {
     )
 };
 
+
 // onclick DEAL - 2 cards to each player
 const deal = document.querySelector('.deal');
 deal.addEventListener('click', function() {
@@ -68,7 +69,22 @@ deal.classList.add("grey");
 
 // game is ready to play
 
-// TODO - Twists 
+// Twists 
+
+const twist1 = document.querySelector('.twist-player-1');
+twist1.addEventListener('click', function() {
+    dealPlayerOneCard();
+});
+
+const twist2 = document.querySelector('.twist-player-2');
+twist2.addEventListener('click', function() {
+    dealPlayerTwoCard();
+});
+
+
+
+
+
 
 // TODO - Aces change value from 11 to 1
 

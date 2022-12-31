@@ -23,31 +23,42 @@ shuffle.textContent = 'Shuffled';
 shuffle.classList.add("grey");
 });
 
-console.log(deck);
-
-
-function dealOneCard() {
-    deck.splice(0, 1);
-    }
-
-    dealOneCard();
-    console.log(deck);
-    dealOneCard();
-    console.log(deck);
-    dealOneCard();
-    console.log(deck);
-    dealOneCard();
-    console.log(deck);
-
-
 
 // A function that will: 
-// splice off first item in array
-// render in card-box
+// remove first item in deck array
+// render that in card-box
 // update (add to) the score 
 
 // function called four times when deal button is clicked (2 cards to each player's card-box)
 // function called once each time the Twist button is clicked and render in correct player's card-box
+
+
+
+// sets up empty arrays for each player's hand
+let playerOneHand = [];
+let playerTwoHand = [];
+
+// deals first item from array to player one
+function dealPlayerOneCard() {
+playerOneHand = deck.shift();
+};
+// deals first item from array to player two
+function dealPlayerTwoCard() {
+playerTwoHand = deck.shift();
+};
+
+dealPlayerOneCard();
+console.log(playerOneHand); 
+
+dealPlayerTwoCard();
+console.log(playerOneHand); 
+
+console.log(deck); 
+
+
+
+
+
 
 
 
@@ -112,6 +123,3 @@ stick4.classList.add("grey");
 
 
 
-// A function that will deal one card and update the score
-// Then call that function four times when dealing
-// And call that function once each time Twist is clicked 

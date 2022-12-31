@@ -1,4 +1,6 @@
 // have an array with 52 cards 
+// TODO - add the correct deck
+// TODO - remove inDeck
 const deck = [
     { cardName: 1, cardSuit: "spades", cardNumber: '2', cardValue: 2, inDeck: true },
     { cardName: 2, cardSuit: "hearts", cardNumber: '3', cardValue: 3, inDeck: true },
@@ -38,30 +40,37 @@ shuffle.classList.add("grey");
 let playerOneHand = [];
 let playerTwoHand = [];
 
-// deals first item from array to player one
+// deals first item from deck array to player one
 function dealPlayerOneCard() {
-playerOneHand = deck.shift();
+    playerOneHand = playerOneHand.concat(
+        playerOneHand = deck.shift()
+    )
 };
-// deals first item from array to player two
+// deals first item from deck array to player two
 function dealPlayerTwoCard() {
-playerTwoHand = deck.shift();
+    playerTwoHand = playerTwoHand.concat(
+        playerTwoHand = deck.shift()
+    )
 };
 
-dealPlayerOneCard();
-console.log(playerOneHand); 
-
-dealPlayerTwoCard();
-console.log(playerOneHand); 
-
-console.log(deck); 
-
-
-
-
-
-
+// onclick DEAL - 2 cards to each player
+const deal = document.querySelector('.deal');
+deal.addEventListener('click', function() {
+    dealPlayerOneCard();
+    dealPlayerTwoCard();
+    dealPlayerOneCard();
+    dealPlayerTwoCard();
+    // TODO - render cards into the play-box - with icons? 
+    // TODO - update total for each player
+deal.classList.add("grey");
+});
 
 
+// game is ready to play
+
+// TODO - Twists 
+
+// TODO - Aces change value from 11 to 1
 
 // onclick STICK - player 1 
 const stick1 = document.querySelector('.stick-player-1');
@@ -81,41 +90,10 @@ stick4.classList.add("grey");
 });
 
 
+// TODO - result - who is the winner 
 
 
 
-
-// CODE from when deck was unshuffled and dealing was random
-
-// const twist = document.querySelector('.twist-player-1');
-
-// twist.addEventListener('click', function() {
-
-//     const dealCard = deck[Math.floor(Math.random()*deck.length)];
-
-//     const cardOneDeal = document.querySelector('.card-box');
-//     cardOneDeal.textContent = dealCard.cardNumber + ' ' + dealCard.cardSuit;
-
-//     const score = document.querySelector('.player-one-score');
-//     score.textContent = dealCard.cardValue;
-// });
-
-
-
-
-
-
-// for that card change inDeck to false
-
-// repeat for card 2 to player 2's hand
-
-// repeat for card 3 to player 1's hand
-
-// repeat for card 4 to player 2's hand
-
-// total each player's hand 
-
-// game is ready to play
 
 
 

@@ -54,6 +54,20 @@ function dealPlayerTwoCard() {
 };
 
 
+// TODO - function to add card values in player 1's hand and update total score
+// function playerOneScore() {
+    dealPlayerOneCard();
+    dealPlayerOneCard();
+    dealPlayerOneCard();
+    let playerOneTotal = 0;
+    playerOneHand.forEach(item => {
+        playerOneTotal += item.cardValue;
+    });
+    console.log(playerOneTotal);
+//   }
+//   playerOneScore();
+
+
 // onclick DEAL - 2 cards to each player
 const deal = document.querySelector('.deal');
 deal.addEventListener('click', function() {
@@ -65,6 +79,11 @@ deal.addEventListener('click', function() {
     // TODO - update total for each player
 deal.classList.add("grey");
 });
+
+
+// function to update the card-box for player 1
+// const cardOneDeal = document.querySelector('.card-box-1');
+// cardOneDeal.textContent = playerOneHand.cardNumber + ' ' + playerOneHand.cardSuit;
 
 
 // game is ready to play

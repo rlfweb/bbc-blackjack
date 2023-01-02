@@ -1,20 +1,20 @@
 // have an array with 52 cards 
-// TODO - add the correct deck
+// TODO - add the correct deck with 52 cards
 // TODO - remove inDeck
 const deck = [
-    { cardName: 1, cardSuit: "spades", cardNumber: '2', cardValue: 2, inDeck: true },
-    { cardName: 2, cardSuit: "hearts", cardNumber: '3', cardValue: 3, inDeck: true },
-    { cardName: 3, cardSuit: "diamonds", cardNumber: '4', cardValue: 4, inDeck: true },
-    { cardName: 4, cardSuit: "clubs", cardNumber: '5', cardValue: 5, inDeck: true },
-    { cardName: 5, cardSuit: "spades", cardNumber: '6', cardValue: 6, inDeck: true },
-    { cardName: 6, cardSuit: "hearts", cardNumber: '7', cardValue: 7, inDeck: true },
-    { cardName: 7, cardSuit: "diamonds", cardNumber: '8', cardValue: 8, inDeck: true },
-    { cardName: 8, cardSuit: "clubs", cardNumber: '9', cardValue: 9, inDeck: true },
-    { cardName: 9, cardSuit: "spades", cardNumber: '10', cardValue: 10, inDeck: true },
-    { cardName: 10, cardSuit: "hearts", cardNumber: 'J', cardValue: 10, inDeck: true },
-    { cardName: 11, cardSuit: "diamonds", cardNumber: 'Q', cardValue: 10, inDeck: true },
-    { cardName: 12, cardSuit: "clubs", cardNumber: 'K', cardValue: 10, inDeck: true },
-    { cardName: 13, cardSuit: "spades", cardNumber: 'A', cardValue: 11, inDeck: true }
+    { cardName: 1, cardSuit: "spades", cardNumber: '2', cardValue: 2 },
+    { cardName: 2, cardSuit: "hearts", cardNumber: '3', cardValue: 3 },
+    { cardName: 3, cardSuit: "diamonds", cardNumber: '4', cardValue: 4 },
+    { cardName: 4, cardSuit: "clubs", cardNumber: '5', cardValue: 5 },
+    { cardName: 5, cardSuit: "spades", cardNumber: '6', cardValue: 6 },
+    { cardName: 6, cardSuit: "hearts", cardNumber: '7', cardValue: 7 },
+    { cardName: 7, cardSuit: "diamonds", cardNumber: '8', cardValue: 8 },
+    { cardName: 8, cardSuit: "clubs", cardNumber: '9', cardValue: 9 },
+    { cardName: 9, cardSuit: "spades", cardNumber: '10', cardValue: 10 },
+    { cardName: 10, cardSuit: "hearts", cardNumber: 'J', cardValue: 10 },
+    { cardName: 11, cardSuit: "diamonds", cardNumber: 'Q', cardValue: 10 },
+    { cardName: 12, cardSuit: "clubs", cardNumber: 'K', cardValue: 10 },
+    { cardName: 13, cardSuit: "spades", cardNumber: 'A', cardValue: 11 }
 ]
 
 // onclick SHUFFLE 
@@ -53,20 +53,23 @@ function dealPlayerTwoCard() {
     )
 };
 
-
-// TODO - function to add card values in player 1's hand and update total score
-// function playerOneScore() {
-    dealPlayerOneCard();
-    dealPlayerOneCard();
-    dealPlayerOneCard();
+// add card values in player 1's hand and update total score
+function playerOneScore() { 
     let playerOneTotal = 0;
     playerOneHand.forEach(item => {
         playerOneTotal += item.cardValue;
     });
-    console.log(playerOneTotal);
-//   }
-//   playerOneScore();
+    document.getElementById("player-one-score").innerHTML = playerOneTotal;
+}
 
+// add card values in player 2's hand and update total score
+function playerTwoScore() { 
+    let playerTwoTotal = 0;
+    playerTwoHand.forEach(item => {
+        playerTwoTotal += item.cardValue;
+    });
+    document.getElementById("player-two-score").innerHTML = playerTwoTotal;
+}
 
 // onclick DEAL - 2 cards to each player
 const deal = document.querySelector('.deal');
@@ -74,16 +77,20 @@ deal.addEventListener('click', function() {
     dealPlayerOneCard();
     dealPlayerTwoCard();
     dealPlayerOneCard();
+    playerOneScore();
     dealPlayerTwoCard();
+    playerTwoScore();
     // TODO - render cards into the play-box - with icons? 
-    // TODO - update total for each player
 deal.classList.add("grey");
+
 });
 
 
 // function to update the card-box for player 1
+
 // const cardOneDeal = document.querySelector('.card-box-1');
 // cardOneDeal.textContent = playerOneHand.cardNumber + ' ' + playerOneHand.cardSuit;
+
 
 
 // game is ready to play
@@ -93,11 +100,13 @@ deal.classList.add("grey");
 const twist1 = document.querySelector('.twist-player-1');
 twist1.addEventListener('click', function() {
     dealPlayerOneCard();
+    playerOneScore();
 });
 
 const twist2 = document.querySelector('.twist-player-2');
 twist2.addEventListener('click', function() {
     dealPlayerTwoCard();
+    playerTwoScore();
 });
 
 

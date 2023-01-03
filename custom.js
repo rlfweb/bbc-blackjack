@@ -2,19 +2,19 @@
 // TODO - add the correct deck with 52 cards
 // TODO - remove inDeck
 const deck = [
-    { cardName: 1, cardSuit: "spades", cardNumber: '2', cardValue: 2 },
-    { cardName: 2, cardSuit: "hearts", cardNumber: '3', cardValue: 3 },
-    { cardName: 3, cardSuit: "diamonds", cardNumber: '4', cardValue: 4 },
-    { cardName: 4, cardSuit: "clubs", cardNumber: '5', cardValue: 5 },
-    { cardName: 5, cardSuit: "spades", cardNumber: '6', cardValue: 6 },
-    { cardName: 6, cardSuit: "hearts", cardNumber: '7', cardValue: 7 },
-    { cardName: 7, cardSuit: "diamonds", cardNumber: '8', cardValue: 8 },
-    { cardName: 8, cardSuit: "clubs", cardNumber: '9', cardValue: 9 },
-    { cardName: 9, cardSuit: "spades", cardNumber: '10', cardValue: 10 },
-    { cardName: 10, cardSuit: "hearts", cardNumber: 'J', cardValue: 10 },
-    { cardName: 11, cardSuit: "diamonds", cardNumber: 'Q', cardValue: 10 },
-    { cardName: 12, cardSuit: "clubs", cardNumber: 'K', cardValue: 10 },
-    { cardName: 13, cardSuit: "spades", cardNumber: 'A', cardValue: 11 }
+    { cardName: 1, cardSuit: './images/spades.png', cardNumber: '2', cardValue: 2 },
+    { cardName: 2, cardSuit: './images/hearts.png', cardNumber: '3', cardValue: 3 },
+    { cardName: 3, cardSuit: './images/diamonds.png', cardNumber: '4', cardValue: 4 },
+    { cardName: 4, cardSuit: './images/clubs.png', cardNumber: '5', cardValue: 5 },
+    { cardName: 5, cardSuit: './images/spades.png', cardNumber: '6', cardValue: 6 },
+    { cardName: 6, cardSuit: './images/hearts.png', cardNumber: '7', cardValue: 7 },
+    { cardName: 7, cardSuit: './images/diamonds.png', cardNumber: '8', cardValue: 8 },
+    { cardName: 8, cardSuit: './images/clubs.png', cardNumber: '9', cardValue: 9 },
+    { cardName: 9, cardSuit: './images/spades.png', cardNumber: '10', cardValue: 10 },
+    { cardName: 10, cardSuit: './images/hearts.png', cardNumber: 'J', cardValue: 10 },
+    { cardName: 11, cardSuit: './images/diamonds.png', cardNumber: 'Q', cardValue: 10 },
+    { cardName: 12, cardSuit: './images/clubs.png', cardNumber: 'K', cardValue: 10 },
+    { cardName: 13, cardSuit: './images/spades.png', cardNumber: 'A', cardValue: 11 }
 ]
 
 // onclick SHUFFLE 
@@ -45,12 +45,19 @@ function dealPlayerOneCard() {
     playerOneHand = playerOneHand.concat(
         playerOneHand = deck.shift()
     )
+     if(playerOneHand.length!=0){
+        document.getElementById("player-one-hand").innerHTML += "<div>"+playerOneHand[playerOneHand.length-1].cardNumber+"   "+"<img src="+playerOneHand[playerOneHand.length-1].cardSuit+" />"+"</div>";
+     }
 };
+
 // deals first item from deck array to player two
 function dealPlayerTwoCard() {
     playerTwoHand = playerTwoHand.concat(
         playerTwoHand = deck.shift()
     )
+    if(playerTwoHand.length!=0){
+        document.getElementById("player-two-hand").innerHTML += "<div>"+playerTwoHand[playerTwoHand.length-1].cardNumber+"   "+"<img src="+playerTwoHand[playerTwoHand.length-1].cardSuit+" />"+"</div>";
+     }
 };
 
 // add card values in player 1's hand and update total score
@@ -85,11 +92,11 @@ deal.classList.add("grey");
 
 });
 
-
-// function to update the card-box for player 1
-
-// const cardOneDeal = document.querySelector('.card-box-1');
-// cardOneDeal.textContent = playerOneHand.cardNumber + ' ' + playerOneHand.cardSuit;
+// let cardOneDeal = document.querySelector('.player-one-hand');
+//     cardOneDeal.textContent = 
+//     playerOneHand.forEach(item => {playerOneHand.cardNumber + ' ' + playerOneHand.cardSuit;
+// });
+    
 
 
 
@@ -136,7 +143,7 @@ stick4.classList.add("grey");
 
 // TODO - result - who is the winner 
 
-
+// if playerOneScore > 21 : document.getElementById("player-two-score").innerHTML = playerTwoTotal;
 
 
 

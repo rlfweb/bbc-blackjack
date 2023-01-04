@@ -37,8 +37,14 @@ function playerOneScore() {
     playerOneHand.forEach(item => {
         playerOneTotal += item.cardValue;
     });
+// reduces total score by 10 if total is over 21 and the player has an ace
+    if (playerOneTotal >21 && playerOneHand.some(ace => ace.cardNumber === 'A')) {
+        playerOneTotal = playerOneTotal - 10;
+    }
+    // updates score in html if score under 22
     if (playerOneTotal <= 21) {
     document.getElementById("player-one-score").innerHTML = playerOneTotal;
+    // adds outputs BUST and red class 
     } else {
         document.getElementById("player-one-score").innerHTML = "BUST";
         document.getElementById("player-one-total").classList.add("red");
@@ -51,6 +57,9 @@ function playerTwoScore() {
     playerTwoHand.forEach(item => {
         playerTwoTotal += item.cardValue;
     });
+    if (playerTwoTotal >21 && playerTwoHand.some(ace => ace.cardNumber === 'A')) {
+        playerTwoTotal = playerTwoTotal - 10;
+    }
     if (playerTwoTotal <= 21) {
         document.getElementById("player-two-score").innerHTML = playerTwoTotal;
         } else {

@@ -37,7 +37,7 @@ header {
 .button-row {
   display: flex;
   justify-content: center;
-  margin-bottom: 2rem;
+  /* margin-bottom: 2rem; */
 }
 
 button,
@@ -115,6 +115,7 @@ input {
 
 .total {
   background-color: chartreuse;
+  border: white 1px solid;
   max-width: 150px;
   margin-left: auto;
   margin-right: auto;
@@ -125,15 +126,19 @@ input {
 .red {
   background-color: red;
   color: #fff;
+  border: white 1px solid;
 }
 
 .score {
   font-size: 3rem;
 }
 
-#result {
+#final-result {
+  font-size: 3rem;
+  cursor: pointer;
   background-color: orange;
-  width: 240px;
+  border: white 1px solid;
+  max-width: 300px;
   margin: 0 auto 2rem auto;
   padding: 8px;
   text-align: center;

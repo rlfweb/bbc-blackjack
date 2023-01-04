@@ -1,21 +1,3 @@
-// have an array with 52 cards 
-// TODO - add the correct deck with 52 cards
-// TODO - remove inDeck
-const deck = [
-    { cardName: 1, cardSuit: './images/spades.png', cardNumber: '2', cardValue: 2 },
-    { cardName: 2, cardSuit: './images/hearts.png', cardNumber: '3', cardValue: 3 },
-    { cardName: 3, cardSuit: './images/diamonds.png', cardNumber: '4', cardValue: 4 },
-    { cardName: 4, cardSuit: './images/clubs.png', cardNumber: '5', cardValue: 5 },
-    { cardName: 5, cardSuit: './images/spades.png', cardNumber: '6', cardValue: 6 },
-    { cardName: 6, cardSuit: './images/hearts.png', cardNumber: '7', cardValue: 7 },
-    { cardName: 7, cardSuit: './images/diamonds.png', cardNumber: '8', cardValue: 8 },
-    { cardName: 8, cardSuit: './images/clubs.png', cardNumber: '9', cardValue: 9 },
-    { cardName: 9, cardSuit: './images/spades.png', cardNumber: '10', cardValue: 10 },
-    { cardName: 10, cardSuit: './images/hearts.png', cardNumber: 'J', cardValue: 10 },
-    { cardName: 11, cardSuit: './images/diamonds.png', cardNumber: 'Q', cardValue: 10 },
-    { cardName: 12, cardSuit: './images/clubs.png', cardNumber: 'K', cardValue: 10 },
-    { cardName: 13, cardSuit: './images/spades.png', cardNumber: 'A', cardValue: 11 }
-]
 
 // onclick SHUFFLE 
 const shuffle = document.querySelector('.shuffle');
@@ -25,18 +7,7 @@ shuffle.textContent = 'Shuffled';
 shuffle.classList.add("grey");
 });
 
-
-// A function that will: 
-// remove first item in deck array
-// render that in card-box
-// update (add to) the score 
-
-// function called four times when deal button is clicked (2 cards to each player's card-box)
-// function called once each time the Twist button is clicked and render in correct player's card-box
-
-
-
-// sets up empty arrays for each player's hand
+// set up empty arrays for each player's hand
 let playerOneHand = [];
 let playerTwoHand = [];
 
@@ -60,7 +31,7 @@ function dealPlayerTwoCard() {
      }
 };
 
-// add card values in player 1's hand and update total score
+// add card values in player one's hand and update total score
 function playerOneScore() { 
     let playerOneTotal = 0;
     playerOneHand.forEach(item => {
@@ -72,9 +43,9 @@ function playerOneScore() {
         document.getElementById("player-one-score").innerHTML = "BUST";
         document.getElementById("player-one-total").classList.add("red");
       }    
-}
+};
 
-// add card values in player 2's hand and update total score
+// add card values in player two's hand and update total score
 function playerTwoScore() { 
     let playerTwoTotal = 0;
     playerTwoHand.forEach(item => {
@@ -86,7 +57,7 @@ function playerTwoScore() {
         document.getElementById("player-two-score").innerHTML = "BUST";
         document.getElementById("player-two-total").classList.add("red");
       }  
-}
+};
 
 // onclick DEAL - 2 cards to each player
 const deal = document.querySelector('.deal');
@@ -97,20 +68,12 @@ deal.addEventListener('click', function() {
     playerOneScore();
     dealPlayerTwoCard();
     playerTwoScore();
-    // TODO - render cards into the play-box - with icons? 
 deal.classList.add("grey");
-
 });
-
-
-    
-
-
 
 // game is ready to play
 
-// Twists 
-
+// onclick TWIST 
 const twist1 = document.querySelector('.twist-player-1');
 twist1.addEventListener('click', function() {
     dealPlayerOneCard();
@@ -123,13 +86,7 @@ twist2.addEventListener('click', function() {
     playerTwoScore();
 });
 
-
-
-
-// TODO - Aces change value from 11 to 1
-
-
-// onclick STICK - player 1 
+// onclick STICK - player one 
 const stick1 = document.querySelector('.stick-player-1');
 const stick2 = document.querySelector('.twist-player-1');
 stick1.addEventListener('click', function() {
@@ -138,7 +95,7 @@ stick2.classList.add("grey");
 });
 
 
-// onclick STICK - player 2 
+// onclick STICK - player two 
 const stick3 = document.querySelector('.stick-player-2');
 const stick4 = document.querySelector('.twist-player-2');
 stick3.addEventListener('click', function() {
@@ -147,14 +104,36 @@ stick4.classList.add("grey");
 });
 
 
-// TODO - result - who is the winner 
+// RESULT - who is the winner 
 
+// event listener
+const result = document.querySelector('.result');
+result.addEventListener('click', function() {
 
-// if playerTwoScore > 21 : document.getElementById("result").innerHTML = "Player 1 WINS";
+// get player one result
+let playerOneResult = playerOneHand.reduce((accumulator, object) => {
+    return accumulator + object.cardValue;
+}, 0);
 
-function result() { 
-if (playerOneScore > 21) {
-    document.getElementById(".result").innerHTML = "Player 2 WINS";
-  }
-  console.log(result);
-}
+// get player two result
+let playerTwoResult = playerTwoHand.reduce((accumulator, object) => {
+    return accumulator + object.cardValue;
+}, 0);
+
+// compare the two and render final result
+if (playerTwoResult > 21 && playerOneResult > 21) {
+    document.getElementById("final-result").innerHTML = "DRAW";
+} else if (playerOneResult <= 21 && playerTwoResult > 22) {
+    document.getElementById("final-result").innerHTML = "Player One WINS";
+  } else if (playerTwoResult <= 21 && playerOneResult > 22) {
+    document.getElementById("final-result").innerHTML = "Player Two WINS";
+} else if (playerTwoResult < 22 && playerOneResult < 22, playerOneResult > playerTwoResult) {
+    document.getElementById("final-result").innerHTML = "Player One WINS";
+} else if (playerTwoResult < 22 && playerOneResult < 22, playerOneResult < playerTwoResult) {
+    document.getElementById("final-result").innerHTML = "Player Two WINS";
+} else if (playerTwoResult < 22 && playerOneResult < 22, playerOneResult = playerTwoResult) {
+    document.getElementById("final-result").innerHTML = "DRAW";
+} else {
+    document.getElementById("final-result").innerHTML = "NO RESULT";  }
+
+});

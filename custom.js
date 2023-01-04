@@ -66,7 +66,12 @@ function playerOneScore() {
     playerOneHand.forEach(item => {
         playerOneTotal += item.cardValue;
     });
+    if (playerOneTotal <= 21) {
     document.getElementById("player-one-score").innerHTML = playerOneTotal;
+    } else {
+        document.getElementById("player-one-score").innerHTML = "BUST";
+        document.getElementById("player-one-total").classList.add("red");
+      }    
 }
 
 // add card values in player 2's hand and update total score
@@ -75,7 +80,12 @@ function playerTwoScore() {
     playerTwoHand.forEach(item => {
         playerTwoTotal += item.cardValue;
     });
-    document.getElementById("player-two-score").innerHTML = playerTwoTotal;
+    if (playerTwoTotal <= 21) {
+        document.getElementById("player-two-score").innerHTML = playerTwoTotal;
+        } else {
+        document.getElementById("player-two-score").innerHTML = "BUST";
+        document.getElementById("player-two-total").classList.add("red");
+      }  
 }
 
 // onclick DEAL - 2 cards to each player
@@ -92,10 +102,7 @@ deal.classList.add("grey");
 
 });
 
-// let cardOneDeal = document.querySelector('.player-one-hand');
-//     cardOneDeal.textContent = 
-//     playerOneHand.forEach(item => {playerOneHand.cardNumber + ' ' + playerOneHand.cardSuit;
-// });
+
     
 
 
@@ -119,9 +126,8 @@ twist2.addEventListener('click', function() {
 
 
 
-
-
 // TODO - Aces change value from 11 to 1
+
 
 // onclick STICK - player 1 
 const stick1 = document.querySelector('.stick-player-1');
@@ -143,12 +149,12 @@ stick4.classList.add("grey");
 
 // TODO - result - who is the winner 
 
-// if playerOneScore > 21 : document.getElementById("player-two-score").innerHTML = playerTwoTotal;
 
+// if playerTwoScore > 21 : document.getElementById("result").innerHTML = "Player 1 WINS";
 
-
-
-
-
-
-
+function result() { 
+if (playerOneScore > 21) {
+    document.getElementById(".result").innerHTML = "Player 2 WINS";
+  }
+  console.log(result);
+}

@@ -115,18 +115,23 @@ input {
 
 .total {
   background-color: chartreuse;
-  width: 120px;
+  max-width: 150px;
   margin-left: auto;
   margin-right: auto;
   padding: 8px;
   margin-bottom: 2rem;
 }
 
+.red {
+  background-color: red;
+  color: #fff;
+}
+
 .score {
   font-size: 3rem;
 }
 
-.result {
+#result {
   background-color: orange;
   width: 240px;
   margin: 0 auto 2rem auto;

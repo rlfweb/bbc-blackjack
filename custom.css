@@ -44,9 +44,9 @@ button,
 input {
   border-radius: 0;
   background-color: #ffe581;
+  border: #050505 1px solid;
   margin: 1rem;
   font-size: 2rem;
-  border-style: none;
 }
 
 button:hover,
@@ -114,19 +114,13 @@ input {
 }
 
 .total {
-  background-color: chartreuse;
-  border: white 1px solid;
-  max-width: 150px;
+  color: chartreuse;
   margin-left: auto;
   margin-right: auto;
-  padding: 8px;
-  margin-bottom: 2rem;
 }
 
 .red {
-  background-color: red;
-  color: #fff;
-  border: white 1px solid;
+  color: red;
 }
 
 .score {
@@ -137,7 +131,7 @@ input {
   font-size: 3rem;
   cursor: pointer;
   background-color: orange;
-  border: white 1px solid;
+  border: #050505 1px solid;
   max-width: 300px;
   margin: 0 auto 2rem auto;
   padding: 8px;

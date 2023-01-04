@@ -137,3 +137,9 @@ if (playerTwoResult > 21 && playerOneResult > 21) {
     document.getElementById("final-result").innerHTML = "NO RESULT";  }
 
 });
+
+// TODO - ACES 
+// Issues 
+// When a player is randomly dealt two ACES, they are immediately BUST
+// When a player's score exceeds 21, and one of their cards is an ACE, that ACE should reduce value from 11 to 1
+// When they have several ACES, will this reduction  happen numerous times i.e. if they are dealt A, 2, 3, A, A, their score would be 18?

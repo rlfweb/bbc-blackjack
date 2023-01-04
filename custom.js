@@ -150,26 +150,27 @@ let playerTwoResult = playerTwoHand.reduce((accumulator, object) => {
     return accumulator + object.cardValue;
 }, 0);
 
-// compare the two and render final result
-if (playerTwoResult > 21 && playerOneResult > 21) {
+// compare Scores and render final result
+    // Both players have valid hands and equal scores
+if ((playerOneResult < 22) && (playerTwoResult < 22) && (playerOneResult == playerTwoResult)) {
     document.getElementById("final-result").innerHTML = "DRAW";
-} else if (playerOneResult <= 21 && playerTwoResult > 22) {
-    document.getElementById("final-result").innerHTML = "Player One WINS";
-  } else if (playerTwoResult <= 21 && playerOneResult > 22) {
-    document.getElementById("final-result").innerHTML = "Player Two WINS";
-} else if (playerTwoResult < 22 && playerOneResult < 22, playerOneResult > playerTwoResult) {
-    document.getElementById("final-result").innerHTML = "Player One WINS";
-} else if (playerTwoResult < 22 && playerOneResult < 22, playerOneResult < playerTwoResult) {
-    document.getElementById("final-result").innerHTML = "Player Two WINS";
-} else if (playerTwoResult < 22 && playerOneResult < 22, playerOneResult = playerTwoResult) {
+    // Both players bust
+} else if ((playerOneResult > 21) && (playerTwoResult > 21)) {
     document.getElementById("final-result").innerHTML = "DRAW";
+    // Player 1 valid and Player 2 bust
+} else if ((playerOneResult < 22) && (playerTwoResult >= 22)) {
+    document.getElementById("final-result").innerHTML = "Player One WINS";
+    // Player One bust and Player Two valid
+} else if ((playerOneResult >= 22) && (playerTwoResult < 22)) {
+    document.getElementById("final-result").innerHTML = "Player Two WINS";
+    // Both players have valid hands and Player One closer to 21
+} else if ((playerOneResult < 22) && (playerTwoResult < 22) && (playerOneResult > playerTwoResult)) {
+    document.getElementById("final-result").innerHTML = "Player One WINS";
+    // Both players have valid hands and Player Two closer to 21
+} else if ((playerOneResult < 22) && (playerTwoResult < 22) && (playerOneResult < playerTwoResult)) {
+    document.getElementById("final-result").innerHTML = "Player Two WINS";
+    // i.e. game not played yet
 } else {
     document.getElementById("final-result").innerHTML = "NO RESULT";  }
 
 });
-
-// TODO - ACES 
-// Issues 
-// When a player is randomly dealt two ACES, they are immediately BUST
-// When a player's score exceeds 21, and one of their cards is an ACE, that ACE should reduce value from 11 to 1
-// When they have several ACES, will this reduction  happen numerous times i.e. if they are dealt A, 2, 3, A, A, their score would be 18?

@@ -37,8 +37,17 @@ function playerOneScore() {
     playerOneHand.forEach(item => {
         playerOneTotal += item.cardValue;
     });
-// reduces total score by 10 if total is over 21 and the player has an ace
-    if (playerOneTotal >21 && playerOneHand.some(ace => ace.cardNumber === 'A')) {
+    // reduces total score by 10 if total is over 21 and the player has an Ace
+    if (playerOneTotal > 21 && playerOneHand.some(ace => ace.cardName === 13)) {
+        playerOneTotal = playerOneTotal - 10;
+    }
+    if (playerOneTotal > 21 && playerOneHand.some(ace => ace.cardName === 26)) {
+        playerOneTotal = playerOneTotal - 10;
+    }
+    if (playerOneTotal > 21 && playerOneHand.some(ace => ace.cardName === 39)) {
+        playerOneTotal = playerOneTotal - 10;
+    }
+    if (playerOneTotal > 21 && playerOneHand.some(ace => ace.cardName === 52)) {
         playerOneTotal = playerOneTotal - 10;
     }
     // updates score in html if score under 22
@@ -57,11 +66,23 @@ function playerTwoScore() {
     playerTwoHand.forEach(item => {
         playerTwoTotal += item.cardValue;
     });
-    if (playerTwoTotal >21 && playerTwoHand.some(ace => ace.cardNumber === 'A')) {
+    // reduces total score by 10 if total is over 21 and the player has an Ace
+    if (playerTwoTotal > 21 && playerTwoHand.some(ace => ace.cardName === 13)) {
         playerTwoTotal = playerTwoTotal - 10;
     }
+    if (playerTwoTotal > 21 && playerTwoHand.some(ace => ace.cardName === 26)) {
+        playerTwoTotal = playerTwoTotal - 10;
+    }
+    if (playerTwoTotal > 21 && playerTwoHand.some(ace => ace.cardName === 39)) {
+        playerTwoTotal = playerTwoTotal - 10;
+    }
+    if (playerTwoTotal > 21 && playerTwoHand.some(ace => ace.cardName === 52)) {
+        playerTwoTotal = playerTwoTotal - 10;
+    }
+    // updates score in html if score under 22
     if (playerTwoTotal <= 21) {
-        document.getElementById("player-two-score").innerHTML = playerTwoTotal;
+    document.getElementById("player-two-score").innerHTML = playerTwoTotal;
+    // adds outputs BUST and red class 
         } else {
         document.getElementById("player-two-score").innerHTML = "BUST";
         document.getElementById("player-two-total").classList.add("red");

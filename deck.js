@@ -55,12 +55,11 @@ const deck = [
 ]
 
 
-// TEST DECK - comment out main deck and deal without shuffling 
+// TEST DECK - comment out main deck and deal test deck without shuffling 
 // const deck = [
 //     { cardName: 13, cardSuit: './images/spades.png', cardNumber: 'A', cardValue: 11 },
 //     { cardName: 26, cardSuit: './images/hearts.png', cardNumber: 'A', cardValue: 11 },
 //     { cardName: 39, cardSuit: './images/clubs.png', cardNumber: 'A', cardValue: 11 },
-//     { cardName: 52, cardSuit: './images/diamonds.png', cardNumber: 'A', cardValue: 11 },
 //     { cardSuit: './images/diamonds.png', cardNumber: 'K', cardValue: 10 },
 //     { cardSuit: './images/hearts.png', cardNumber: '9', cardValue: 9 },
 //     { cardSuit: './images/diamonds.png', cardNumber: 'Q', cardValue: 10 },

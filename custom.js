@@ -17,7 +17,7 @@ function dealPlayerOneCard() {
         playerOneHand = deck.shift()
     )
      if(playerOneHand.length!=0){
-        document.getElementById("player-one-hand").innerHTML += "<div>"+playerOneHand[playerOneHand.length-1].cardNumber+"   "+"<img src="+playerOneHand[playerOneHand.length-1].cardSuit+" />"+"</div>";
+        document.getElementById("player-one-hand").innerHTML += "<div>"+playerOneHand[playerOneHand.length-1].cardNumber+"<br>"+"<img src="+playerOneHand[playerOneHand.length-1].cardSuit+" />"+"</div>";
      }
 };
 
@@ -27,7 +27,7 @@ function dealPlayerTwoCard() {
         playerTwoHand = deck.shift()
     )
     if(playerTwoHand.length!=0){
-        document.getElementById("player-two-hand").innerHTML += "<div>"+playerTwoHand[playerTwoHand.length-1].cardNumber+"   "+"<img src="+playerTwoHand[playerTwoHand.length-1].cardSuit+" />"+"</div>";
+        document.getElementById("player-two-hand").innerHTML += "<div>"+playerTwoHand[playerTwoHand.length-1].cardNumber+"<br>"+"<img src="+playerTwoHand[playerTwoHand.length-1].cardSuit+" />"+"</div>";
      }
 };
 

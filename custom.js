@@ -33,26 +33,26 @@ function dealPlayerTwoCard() {
 
 // add card values in player one's hand and update total score
 function playerOneScore() { 
-    let playerOneTotal = 0;
+    let playerOneResult = 0;
     playerOneHand.forEach(item => {
-        playerOneTotal += item.cardValue;
+        playerOneResult += item.cardValue;
     });
     // reduces total score by 10 if total is over 21 and the player has an Ace
-    if (playerOneTotal > 21 && playerOneHand.some(ace => ace.cardName === 13)) {
-        playerOneTotal = playerOneTotal - 10;
+    if (playerOneResult > 21 && playerOneHand.some(ace => ace.cardName === 13)) {
+        playerOneResult = playerOneResult - 10;
     }
-    if (playerOneTotal > 21 && playerOneHand.some(ace => ace.cardName === 26)) {
-        playerOneTotal = playerOneTotal - 10;
+    if (playerOneResult > 21 && playerOneHand.some(ace => ace.cardName === 26)) {
+        playerOneResult = playerOneResult - 10;
     }
-    if (playerOneTotal > 21 && playerOneHand.some(ace => ace.cardName === 39)) {
-        playerOneTotal = playerOneTotal - 10;
+    if (playerOneResult > 21 && playerOneHand.some(ace => ace.cardName === 39)) {
+        playerOneResult = playerOneResult - 10;
     }
-    if (playerOneTotal > 21 && playerOneHand.some(ace => ace.cardName === 52)) {
-        playerOneTotal = playerOneTotal - 10;
+    if (playerOneResult > 21 && playerOneHand.some(ace => ace.cardName === 52)) {
+        playerOneResult = playerOneResult - 10;
     }
     // updates score in html if score under 22
-    if (playerOneTotal <= 21) {
-    document.getElementById("player-one-score").innerHTML = playerOneTotal;
+    if (playerOneResult <= 21) {
+    document.getElementById("player-one-score").innerHTML = playerOneResult;
     // adds outputs BUST and red class 
     } else {
         document.getElementById("player-one-score").innerHTML = "BUST";
@@ -62,26 +62,26 @@ function playerOneScore() {
 
 // add card values in player two's hand and update total score
 function playerTwoScore() { 
-    let playerTwoTotal = 0;
+    let playerTwoResult = 0;
     playerTwoHand.forEach(item => {
-        playerTwoTotal += item.cardValue;
+        playerTwoResult += item.cardValue;
     });
     // reduces total score by 10 if total is over 21 and the player has an Ace
-    if (playerTwoTotal > 21 && playerTwoHand.some(ace => ace.cardName === 13)) {
-        playerTwoTotal = playerTwoTotal - 10;
+    if (playerTwoResult > 21 && playerTwoHand.some(ace => ace.cardName === 13)) {
+        playerTwoResult = playerTwoResult - 10;
     }
-    if (playerTwoTotal > 21 && playerTwoHand.some(ace => ace.cardName === 26)) {
-        playerTwoTotal = playerTwoTotal - 10;
+    if (playerTwoResult > 21 && playerTwoHand.some(ace => ace.cardName === 26)) {
+        playerTwoResult = playerTwoResult - 10;
     }
-    if (playerTwoTotal > 21 && playerTwoHand.some(ace => ace.cardName === 39)) {
-        playerTwoTotal = playerTwoTotal - 10;
+    if (playerTwoResult > 21 && playerTwoHand.some(ace => ace.cardName === 39)) {
+        playerTwoResult = playerTwoResult - 10;
     }
-    if (playerTwoTotal > 21 && playerTwoHand.some(ace => ace.cardName === 52)) {
-        playerTwoTotal = playerTwoTotal - 10;
+    if (playerTwoResult > 21 && playerTwoHand.some(ace => ace.cardName === 52)) {
+        playerTwoResult = playerTwoResult - 10;
     }
     // updates score in html if score under 22
-    if (playerTwoTotal <= 21) {
-    document.getElementById("player-two-score").innerHTML = playerTwoTotal;
+    if (playerTwoResult <= 21) {
+    document.getElementById("player-two-score").innerHTML = playerTwoResult;
     // adds outputs BUST and red class 
         } else {
         document.getElementById("player-two-score").innerHTML = "BUST";
@@ -145,10 +145,38 @@ let playerOneResult = playerOneHand.reduce((accumulator, object) => {
     return accumulator + object.cardValue;
 }, 0);
 
+    // reduces total score by 10 if total is over 21 and the player has an Ace
+    if (playerOneResult > 21 && playerOneHand.some(ace => ace.cardName === 13)) {
+        playerOneResult = playerOneResult - 10;
+    }
+    if (playerOneResult > 21 && playerOneHand.some(ace => ace.cardName === 26)) {
+        playerOneResult = playerOneResult - 10;
+    }
+    if (playerOneResult > 21 && playerOneHand.some(ace => ace.cardName === 39)) {
+        playerOneResult = playerOneResult - 10;
+    }
+    if (playerOneResult > 21 && playerOneHand.some(ace => ace.cardName === 52)) {
+        playerOneResult = playerOneResult - 10;
+    }
+
 // get player two result
 let playerTwoResult = playerTwoHand.reduce((accumulator, object) => {
     return accumulator + object.cardValue;
 }, 0);
+
+    // reduces total score by 10 if total is over 21 and the player has an Ace
+    if (playerTwoResult > 21 && playerTwoHand.some(ace => ace.cardName === 13)) {
+        playerTwoResult = playerTwoResult - 10;
+    }
+    if (playerTwoResult > 21 && playerTwoHand.some(ace => ace.cardName === 26)) {
+        playerTwoResult = playerTwoResult - 10;
+    }
+    if (playerTwoResult > 21 && playerTwoHand.some(ace => ace.cardName === 39)) {
+        playerTwoResult = playerTwoResult - 10;
+    }
+    if (playerTwoResult > 21 && playerTwoHand.some(ace => ace.cardName === 52)) {
+        playerTwoResult = playerTwoResult - 10;
+    }
 
 // compare Scores and render final result
     // Both players have valid hands and equal scores
@@ -156,7 +184,7 @@ if ((playerOneResult < 22) && (playerTwoResult < 22) && (playerOneResult == play
     document.getElementById("final-result").innerHTML = "DRAW";
     // Both players bust
 } else if ((playerOneResult > 21) && (playerTwoResult > 21)) {
-    document.getElementById("final-result").innerHTML = "DRAW";
+    document.getElementById("final-result").innerHTML = "NO WINNER";
     // Player 1 valid and Player 2 bust
 } else if ((playerOneResult < 22) && (playerTwoResult >= 22)) {
     document.getElementById("final-result").innerHTML = "Player One WINS";

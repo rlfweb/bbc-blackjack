@@ -1,6 +1,10 @@
+html {
+  font-size: 16px;
+}
+
 body {
   font-family: sans-serif;
-  background-color: lightgray;
+  background-color: #5bccf6;
   color: #030e12;
 }
 
@@ -14,7 +18,7 @@ h1 {
 }
 
 h2 {
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 
 h3 {
@@ -33,6 +37,8 @@ header {
   margin-right: auto;
   background-color: #5bccf6;
 }
+
+/* -------------------- DEALING AND PLAYING BUTTONS -------------------- */
 
 .button-row {
   display: flex;
@@ -72,10 +78,13 @@ input {
   cursor: auto;
 }
 
+/* -------------------- TOTALS AND RESULTS -------------------- */
+
 .game-block {
   text-align: center;
   display: flex;
   justify-content: space-around;
+  margin: 1rem 0 1rem 0;
 }
 
 .player-block {
@@ -113,6 +122,8 @@ input {
   padding-top: 4px;
 }
 
+/* -------------------- TOTALS AND RESULTS -------------------- */
+
 .total {
   color: chartreuse;
   margin-left: auto;
@@ -128,7 +139,7 @@ input {
 }
 
 #final-result {
-  font-size: 3rem;
+  font-size: 2.5rem;
   cursor: pointer;
   background-color: orange;
   border: #050505 1px solid;
@@ -136,4 +147,47 @@ input {
   margin: 0 auto 2rem auto;
   padding: 8px;
   text-align: center;
+}
+
+/* -------------------- MEDIA QUERIES -------------------- */
+
+/* Large -  screens below 1440px - small desktop */
+@media screen and (max-width: 1440px) {
+  html {
+    font-size: 14px;
+  }
+}
+/* Medium -  screens below 1024px - small laptop */
+@media screen and (max-width: 1024px) {
+  html {
+    font-size: 13px;
+  }
+}
+/* Not Small -  screens below 768px - portrait tablet and landscape phone */
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 12px;
+  }
+}
+/* Small -  screens below 480px portrait phone*/
+@media only screen and (max-width: 480px) {
+  html {
+    font-size: 10px;
+  }
+  .game-block {
+    display: block;
+  }
+  .player-block {
+    width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .player-block h2 {
+    margin-top: 2rem;
+  }
+  .card-box {
+    min-height: 140px;
+    margin: 0.5rem;
+    padding: 0.5rem;
+  }
 }

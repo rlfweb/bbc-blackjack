@@ -33,7 +33,7 @@ function dealPlayerTwoCard() {
 
 // add card values in player one's hand and update total score
 function playerOneScore() { 
-    playerOneResult = 0; // not declaring this as variable gives it global scope
+    playerOneResult = 0; // global scope
     playerOneHand.forEach(item => {
         playerOneResult += item.cardValue;
     });
@@ -62,7 +62,7 @@ function playerOneScore() {
 
 // add card values in player two's hand and update total score
 function playerTwoScore() { 
-    playerTwoResult = 0; // not declaring this as variable gives it global scope
+    playerTwoResult = 0; // global scope
     playerTwoHand.forEach(item => {
         playerTwoResult += item.cardValue;
     });
@@ -89,7 +89,7 @@ function playerTwoScore() {
       }  
 };
 
-// onclick DEAL - 2 cards to each player
+// onclick DEAL - 2 cards to each player and update score
 const deal = document.querySelector('.deal');
 deal.addEventListener('click', function() {
     dealPlayerOneCard();
@@ -103,13 +103,14 @@ deal.classList.add("grey");
 
 // game is ready to play
 
-// onclick TWIST 
+// onclick TWIST - player one
 const twist1 = document.querySelector('.twist-player-1');
 twist1.addEventListener('click', function() {
     dealPlayerOneCard();
     playerOneScore();
 });
 
+// onclick TWIST - player two
 const twist2 = document.querySelector('.twist-player-2');
 twist2.addEventListener('click', function() {
     dealPlayerTwoCard();
@@ -144,7 +145,7 @@ if ((playerOneResult < 22) && (playerTwoResult < 22) && (playerOneResult == play
     // Both players bust
 } else if ((playerOneResult > 21) && (playerTwoResult > 21)) {
     document.getElementById("final-result").innerHTML = "NO WINNER";
-    // Player 1 valid and Player 2 bust
+    // Player One valid and Player Two bust
 } else if ((playerOneResult < 22) && (playerTwoResult >= 22)) {
     document.getElementById("final-result").innerHTML = "Player One WINS";
     // Player One bust and Player Two valid
@@ -156,7 +157,6 @@ if ((playerOneResult < 22) && (playerTwoResult < 22) && (playerOneResult == play
     // Both players have valid hands and Player Two closer to 21
 } else if ((playerOneResult < 22) && (playerTwoResult < 22) && (playerOneResult < playerTwoResult)) {
     document.getElementById("final-result").innerHTML = "Player Two WINS";
-    // i.e. game not played yet
 } else {
     document.getElementById("final-result").innerHTML = "NO RESULT";  }
 

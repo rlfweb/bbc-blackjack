@@ -62,6 +62,5 @@ const deck = [
 //     { cardName: 39, cardSuit: './images/clubs.png', cardNumber: 'A', cardValue: 11 },
 //     { cardSuit: './images/diamonds.png', cardNumber: 'K', cardValue: 10 },
 //     { cardSuit: './images/hearts.png', cardNumber: '9', cardValue: 9 },
-//     { cardSuit: './images/diamonds.png', cardNumber: 'Q', cardValue: 10 },
-//     { cardSuit: './images/clubs.png', cardNumber: '8', cardValue: 8 }
+//     { cardSuit: './images/diamonds.png', cardNumber: 'Q', cardValue: 10 }
 // ]
